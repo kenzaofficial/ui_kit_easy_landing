@@ -1,24 +1,26 @@
+{% extends 'template/template.njk' %}
 {% from 'common/njk/head.njk' import head %}
 {% from 'common/njk/scripts.njk' import scripts %}
 {% from 'components/footer/footer.njk' import footer %}
 {% from 'components/button/button.njk' import button %}
 {% from 'components/text-field/text-field.njk' import textField %}
 
-<!DOCTYPE html>
-<html lang="ru">
+{% block head %}
+  {{ head('index', 'Main page') }}
+{% endblock %}
 
-  {{ head('index', 'Название лендинга') }}
+{% block header %}
+  {% include 'components/header/header.njk' %}
+{% endblock %}
 
-  <body>
-    <div class="app">
-      {% include 'components/header/header.njk' %}
-      <main class='main'>
-        {{ button(type='submit', text='Нажми меня') }}
-        {{ textField(name='form-title-message', placeholder='Тема сообщения') }}
-      </main>
-      {{ footer('dark', pageName) }}
-      {{ scripts('index') }}
-    </div>
-  </body>
+{% block main %}
+  <main class=main>
+    {{ button(type='submit', text='Нажми меня') }}
+    {{ textField(name='form-title-message', placeholder='Тема сообщения') }}
+  </main>
+{% endblock %}
+{% block footer %}
+  {{ footer('dark', pageName) }}
+{% endblock %}
 
-</html>
+{{ scripts('index') }}

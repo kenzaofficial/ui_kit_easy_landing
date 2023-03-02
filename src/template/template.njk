@@ -1,0 +1,30 @@
+{% from 'common/njk/scripts.njk' import scripts %}
+<html lang="en">
+  {% block head %}
+    <title>Custom title</title>
+  {% endblock %}
+  <body>
+    <div class="app">
+      <!-- header -->
+      {% block header %}
+      this default header
+    {% endblock %}
+      <!-- /header -->
+
+      <!-- main -->
+      {% block main %}
+      This is the default content test
+      {% endblock %}
+      <!-- /main -->
+
+      <!-- footer -->
+      {% block footer %}
+      this default fooer
+    {% endblock %}
+      <!-- /footer -->
+    </div>
+
+    {{ scripts('index') }}
+  </body>
+
+</html>
