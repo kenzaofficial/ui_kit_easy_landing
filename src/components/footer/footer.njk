@@ -1,14 +1,8 @@
-{% from 'components/menu/menu.njk' import menu %}
 {% macro footer(mode = 'dark', pageName = '/') %}
   <footer class="footer footer--{{ mode }}">
     <div class="footer__container container">
       <div class="footer__body">
-        <a class="footer__logo logo">
-          <img src="assets/img/logo.svg" class="logo__img" alt="my courier logo" width="92" height="20">
-        </a>
-        <!-- menu -->
-        {{ menu('footer__menu', pageName) }}
-        <!-- end menu -->
+        {% include 'components/logo/logo.njk' %}
       </div>
       <p>
         Контактный e-mail support@konfzz.ru<br>
