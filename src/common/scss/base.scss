@@ -1,0 +1,151 @@
+@import "variables";
+
+.container {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+  @media (min-width: $M) {
+    padding: 0 30px;
+  }
+  @media (min-width: $XL) {
+    padding: 0 50px;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+* {
+  min-width: 0;
+  min-height: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $font-family-base;
+  font-size: 12px;
+  font-weight: $font-weight-regular;
+  line-height: 1.5;
+  color: $color-text-primary;
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+  direction: ltr;
+}
+
+body {
+  margin: 0;
+  background-color: $bg-primary;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+@for $index from 1 through 6 {
+  h#{$index} {
+    margin: 0;
+    font-family: $font-family-base;
+    font-weight: 500;
+    color: $color-text-primary;
+  }
+}
+
+input,
+textarea,
+button,
+select {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  font-family: $font-family-base;
+  font-size: 16px;
+  font-weight: $font-weight-regular;
+  color: $color-text-primary;
+}
+
+textarea {
+  overflow-y: auto;
+  resize: none;
+}
+
+input,
+textarea {
+  &::-ms-clear {
+    display: none;
+  }
+  &::-webkit-input-placeholder {
+    color: $color-text-primary;
+  }
+  &::-moz-placeholder {
+    color: $color-text-primary;
+  }
+  &:-ms-input-placeholder {
+    color: $color-text-primary;
+  }
+  &:focus {
+    &::-webkit-input-placeholder {
+      color: transparent;
+    }
+    &::-moz-placeholder {
+      color: transparent;
+    }
+    &:-ms-input-placeholder {
+      color: transparent;
+    }
+  }
+}
+
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+[type="number"] {
+  -moz-appearance: textfield;
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+:focus {
+  outline: none;
+}
+
+:invalid {
+  box-shadow: none;
+}

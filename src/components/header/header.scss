@@ -1,0 +1,260 @@
+.header {
+  background-color: royalblue;
+  z-index: 10;
+  width: 100%;
+  padding: 15px 0;
+  transition: 0.3s;
+  @include media(M) {
+    padding: 27px 0;
+  }
+}
+
+.header__body {
+  position: relative;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.logo {
+  position: relative;
+  z-index: 5;
+  flex-shrink: 0;
+  height: auto;
+}
+
+.logo__img {
+  display: block;
+  max-width: 100%;
+  @include media(M) {
+    width: 138px;
+    height: 31px;
+  }
+}
+
+.header__menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  max-width: 250px;
+  height: 100%;
+  padding: 90px 15px 10px;
+  transition: 0.3s;
+  @include media(MOBILE) {
+    &::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      right: -100%;
+      z-index: 10;
+      width: 100%;
+      max-width: 250px;
+      min-height: 90px;
+      background-color: lightseagreen;
+      transition: all 0.3s ease 0s;
+    }
+  }
+  @include media(M) {
+    position: static;
+    width: auto;
+    max-width: 570px;
+    height: auto;
+    margin-left: auto;
+    padding: 0;
+    background-color: transparent;
+  }
+  @include media(XL) {
+    max-width: 900px;
+  }
+}
+
+.header-menu--is-active .header__menu {
+  text-align: right;
+  @include media(MOBILE) {
+    right: 0;
+    background: lightseagreen;
+    color: white;
+    overflow: auto;
+    &::before,
+    &::after {
+      right: 0;
+    }
+  }
+}
+
+.header--is-scrolled {
+  background-color: rgba(#000, $alpha: 0.7);
+  .menu__link {
+    color: red;
+    &--is-current {
+      color: green;
+    }
+  }
+}
+
+.header__burger-button {
+  position: absolute;
+  top: 3px;
+  right: 0;
+  z-index: 3;
+  width: 19px;
+  height: 12px;
+  @include media(S) {
+    width: 39px;
+  }
+  @include media(M) {
+    display: none;
+  }
+}
+
+.header__burger-button::before,
+.header__burger-button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background-color: violet;
+  transition: all 0.3s ease 0s;
+}
+
+.header__burger-button::before {
+  top: 0;
+  left: 0;
+}
+
+.header__burger-button::after {
+  right: 0;
+  bottom: 0;
+  width: 12px;
+  @include media(S) {
+    width: 20px;
+  }
+}
+
+.header__burger-marker {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  width: 14px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: violet;
+  transition: all 0.3s ease 0s;
+  @include media(S) {
+    width: 30px;
+  }
+}
+
+.header-menu--is-active {
+  li {
+    @include media(MOBILE) {
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+  @include media(MOBILE) {
+    .menu__list {
+      display: block;
+    }
+    .menu__link {
+      font-size: 18px;
+    }
+  }
+}
+
+.header-menu--is-active .header__burger-marker {
+  transform: scale(0);
+}
+
+.header-menu--is-active .header__burger-button::before {
+  top: 5px;
+  transform: rotate(45deg);
+  background-color: red;
+  @include media(S) {
+    left: 50%;
+    width: 50%;
+  }
+}
+
+.header-menu--is-active .header__burger-button::after {
+  bottom: 5px;
+  transform: rotate(-45deg);
+  width: 19px;
+  background-color: red;
+  @include media(S) {
+    width: 50%;
+  }
+}
+
+.header-menu--is-active .header__contacts {
+  @include media(MOBILE) {
+    position: absolute;
+    right: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 200px;
+    gap: 5px 20px;
+  }
+}
+
+/* поведение меню при выключенном джаваскрипте */
+
+@include media(MOBILE) {
+  .no-js .header {
+    position: static;
+    padding: 10px 0 0;
+    background-color: lightseagreen;
+  }
+  .no-js .header__container {
+    padding: 0;
+  }
+  .no-js .header__body {
+    flex-direction: column;
+    height: auto;
+  }
+  .no-js .header__logo {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+    box-shadow: 0 3px 3px -3px black;
+  }
+  .no-js .menu__list {
+    margin: 0;
+    text-align: center;
+    li {
+      margin: 0;
+      padding: 10px 0;
+      border-bottom: 1px solid black;
+      box-shadow: 0 3px 3px -3px black;
+    }
+    a {
+      font-size: 18px;
+      color: black;
+      @include media(MOBILE) {
+        font-size: 14px;
+      }
+    }
+  }
+  .no-js .header__menu {
+    position: static;
+    right: 0;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .no-js .header__menu::before {
+    display: none;
+  }
+  .no-js .header__burger-button {
+    display: none;
+  }
+}

@@ -1,0 +1,33 @@
+@mixin font-face($font-family, $url, $font-weight: 400, $font-style: normal) {
+  @font-face {
+    font-family: "#{$font-family}";
+    src: local("#{$url}"), url("../fonts/#{$url}.woff") format("woff");
+    font-style: $font-style;
+    font-weight: $font-weight;
+    font-display: swap;
+  }
+}
+
+//@include font-face("Roboto", "Roboto-Regular", 400);
+
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-weight: 400;
+  src: url("..//../fonts/OnestRegular.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-weight: 500;
+  src: url("..//../fonts/OnestMedium.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-weight: 700;
+  src: url("..//../fonts/OnestBold.woff") format("woff");
+  font-display: swap;
+}

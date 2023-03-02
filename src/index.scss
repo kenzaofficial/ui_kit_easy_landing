@@ -1,0 +1,22 @@
+@import "common/scss/variables";
+@import "common/scss/mixins";
+@import "common/scss/functions";
+
+// Common
+
+@import "common/scss/fonts";
+// @import "common/scss/normalize";
+@import "common/scss/reset";
+
+@import "common/scss/base";
+@import "pages/main/main";
+
+// Components
+
+@import "components/header/header";
+@import "components/menu/menu";
+// @import "components/logo/logo";
+// @import "components/hero/hero";
+// @import "components/advantages/advantages";
+// @import "components/services/services";
+@import "components/footer/footer";

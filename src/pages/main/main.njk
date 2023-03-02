@@ -1,0 +1,19 @@
+{% from 'common/njk/head.njk' import head %}
+{% from 'common/njk/scripts.njk' import scripts %}
+{% from 'components/footer/footer.njk' import footer %}
+
+<!DOCTYPE html>
+<html lang="ru">
+
+  {{ head('index', 'Название лендинга') }}
+
+  <body>
+    <div class="app">
+      {% include 'components/header/header.njk' %}
+      <main class='main'>1</main>
+      {{ footer('dark', pageName) }}
+      {{ scripts('index') }}
+    </div>
+  </body>
+
+</html>

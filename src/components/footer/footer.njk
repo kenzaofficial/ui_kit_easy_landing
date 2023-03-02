@@ -1,0 +1,20 @@
+{% from 'components/menu/menu.njk' import menu %}
+{% macro footer(mode = 'dark', pageName = '/') %}
+  <footer class="footer footer--{{ mode }}">
+    <div class="footer__container container">
+      <div class="footer__body">
+        <a class="footer__logo logo">
+          <img src="assets/img/logo.svg" class="logo__img" alt="my courier logo" width="92" height="20">
+        </a>
+        <!-- menu -->
+        {{ menu('footer__menu', pageName) }}
+        <!-- end menu -->
+      </div>
+      <p>
+        Контактный e-mail support@konfzz.ru<br>
+        Контактный телефон: +7 495 921-34-44 ООО "А+" ИНН 7325109660, ОГРН 1117325012298, КПП 732501001<br>
+        Ульяновская обл., г. Ульяновск, ул. Карла Либкнехта, д. 24/5А стр. 1 офис 65
+      </p>
+    </div>
+  </footer>
+{% endmacro %}
