@@ -1,0 +1,35 @@
+.button {
+  display: inline-block;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 29px;
+  background-color: darkcyan;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 28px;
+  color: #fff;
+  transition: 0.3s;
+  cursor: pointer;
+  &:focus-within {
+    outline: 1px solid darkred;
+  }
+  @include media(M) {
+    padding: 10px 12px;
+    font-size: 18px;
+    &:hover {
+      background-color: rgb(141, 5, 146);
+    }
+    &:active {
+      background-color: #000;
+    }
+  }
+}
+
+.button-primary {
+  @include media(M) {
+    padding: 15px 20px;
+    &:hover {
+      background-color: #ff9100;
+    }
+  }
+}
