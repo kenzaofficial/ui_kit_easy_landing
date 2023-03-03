@@ -3,10 +3,10 @@
 {% from 'common/njk/scripts.njk' import scripts %}
 {% from 'components/footer/footer.njk' import footer %}
 {% from 'components/button/button.njk' import button %}
-{% from 'components/text-field/text-field.njk' import textField %}
+{% from 'components/form/text-field/text-field.njk' import textField %}
 
 {% block head %}
-  {{ head('index', 'Main page') }}
+  {{ head('index', 'ui-kit') }}
 {% endblock %}
 
 {% block header %}
@@ -14,9 +14,16 @@
 {% endblock %}
 
 {% block main %}
-  <main class=main>
-    {{ button(type='submit', text='Нажми меня') }}
-    {{ textField(name='form-title-message', placeholder='Тема сообщения') }}
+  <main class="main">
+    <form action="#" method="POST" class="form ">
+      <fieldset>
+        <legend>Заполните данные для отправки заявки</legend>
+      </fieldset>
+      {{ textField(name='form-name', placeholder='Тема сообщения') }}
+      {{ textField(name='form-tel', type='tel', placeholder='Введите ваш номер телефона') }}
+      {{ button(type='submit', text='Нажми меня') }}
+    </form>
+    {% include 'components/list/primary-list/primary-list.njk' %}
   </main>
 {% endblock %}
 {% block footer %}

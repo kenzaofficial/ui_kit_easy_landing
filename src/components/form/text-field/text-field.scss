@@ -2,14 +2,15 @@
   position: relative;
   display: inline-block;
   width: 100%;
+  margin-bottom: 20px;
 
   input,
   textarea {
     display: inline-block;
     width: 100%;
     border-radius: 29px;
-    padding: 5px 10px;
-    background-color: darkorange;
+    padding: 10px 20px;
+    background-color: rgb(235, 236, 179);
     color: blue;
     outline: none;
     &:active,
