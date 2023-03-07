@@ -1,0 +1,6 @@
+{% macro textField(name = '', title = '', type ='text' , placeholder = '')%}
+  <div class="form__text-field">
+    <label for="{{ name }}">{{ title }}</label>
+    <input type="{{ type }}" class="form-control" id="{{ name }}" name="{{ name }}" value="{{ value }}"  placeholder="{{ placeholder }}" required>
+  </div>
+{% endmacro %}

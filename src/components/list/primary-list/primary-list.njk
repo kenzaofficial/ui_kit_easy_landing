@@ -1,0 +1,7 @@
+{% from 'components/list/list.njk' import list %}
+{% import './data.njk' as data%}
+
+<ul class="primary-list">
+  {% for advantage in data.advantages %}
+    {{ list( img=advantage.img, title=advantage.title) }}
+  {% endfor %}

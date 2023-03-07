@@ -1,19 +1,33 @@
+{% extends 'template/template.njk' %}
 {% from 'common/njk/head.njk' import head %}
 {% from 'common/njk/scripts.njk' import scripts %}
 {% from 'components/footer/footer.njk' import footer %}
+{% from 'components/button/button.njk' import button %}
+{% from 'components/form/text-field/text-field.njk' import textField %}
 
-<!DOCTYPE html>
-<html lang="ru">
+{% block head %}
+  {{ head('index', 'ui-kit') }}
+{% endblock %}
 
-  {{ head('index', 'Название лендинга') }}
+{% block header %}
+  {% include 'components/header/header.njk' %}
+{% endblock %}
 
-  <body>
-    <div class="app">
-      {% include 'components/header/header.njk' %}
-      <main class='main'>1</main>
-      {{ footer('dark', pageName) }}
-      {{ scripts('index') }}
-    </div>
-  </body>
+{% block main %}
+  <main class="main">
+    <form action="#" method="POST" class="form ">
+      <fieldset>
+        <legend>Заполните данные для отправки заявки</legend>
+      </fieldset>
+      {{ textField(name='form-name', placeholder='Тема сообщения') }}
+      {{ textField(name='form-tel', type='tel', placeholder='Введите ваш номер телефона') }}
+      {{ button(type='submit', text='Нажми меня') }}
+    </form>
+    {% include 'components/list/primary-list/primary-list.njk' %}
+  </main>
+{% endblock %}
+{% block footer %}
+  {{ footer('dark', pageName) }}
+{% endblock %}
 
-</html>
+{{ scripts('index') }}

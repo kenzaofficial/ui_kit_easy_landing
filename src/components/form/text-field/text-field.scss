@@ -1,0 +1,24 @@
+.form__text-field {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 20px;
+
+  input,
+  textarea {
+    display: inline-block;
+    width: 100%;
+    border-radius: 29px;
+    padding: 10px 20px;
+    background-color: rgb(235, 236, 179);
+    color: blue;
+    outline: none;
+    &:active,
+    &:focus {
+      outline: 1px solid darkblue;
+    }
+    &::placeholder {
+      color: gray;
+    }
+  }
+}

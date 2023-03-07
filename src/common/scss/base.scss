@@ -64,6 +64,10 @@ body {
   min-height: 100%;
 }
 
+img {
+  width: 100%;
+}
+
 @for $index from 1 through 6 {
   h#{$index} {
     margin: 0;

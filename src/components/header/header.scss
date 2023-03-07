@@ -2,10 +2,10 @@
   background-color: royalblue;
   z-index: 10;
   width: 100%;
-  padding: 15px 0;
+  padding: 10px 0;
   transition: 0.3s;
   @include media(M) {
-    padding: 27px 0;
+    padding: 20px 0;
   }
 }
 
@@ -14,22 +14,6 @@
   display: flex;
   align-items: center;
   column-gap: 10px;
-}
-
-.logo {
-  position: relative;
-  z-index: 5;
-  flex-shrink: 0;
-  height: auto;
-}
-
-.logo__img {
-  display: block;
-  max-width: 100%;
-  @include media(M) {
-    width: 138px;
-    height: 31px;
-  }
 }
 
 .header__menu {
